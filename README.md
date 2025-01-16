@@ -20,8 +20,8 @@ python3 -m venv esr_tracker_env
 3. Install required packages:
 ```bash
 sudo apt install python3-tk
-```
 pip install tk
+```
 4. Clone the repository or create a new directory for your project.
 
 ## Usage
@@ -64,29 +64,35 @@ The main file `esr_tracker.py` contains the following classes and functions:
 ## Code Explanation
 
 ### Import Statements
-
+```python
 import csv
 import tkinter as tk
 import tkinter.ttk as ttk
 from datetime import datetime
-
+```
 These imports are necessary for the GUI, CSV operations, and date handling.
 
 ### ESRTracker Class
 
 #### Initialize data structures
+```python
 self.teams = {}  # Dictionary of team names
 self.games = {}  # Dictionary of game names
 self.matches = []  # List of match dictionaries
+```
 
 #### Load initial data
+```python
 self.load_data()
+```
 
 #### Create main menu and tkinter frame
+```python
 self.main_menu()
 
 tk.Button(main_frame, text="Admin Mode", command=self.admin_mode).pack(pady=20)
 tk.Button(main_frame, text="Non-Admin Mode", command=self.non_admin_mode).pack(pady=20)
+```
 
 ### CRUD Operations
 
@@ -100,7 +106,7 @@ The create operation typically involves:
 4. Saving the updated data to the corresponding CSV file
 5. Updating the GUI to reflect the new data
 
-```
+```python
 # Add to in-memory structure
 self.teams.append([team_name, score])
 
@@ -119,7 +125,7 @@ The read operation typically involves:
 2. Displaying the data in a GUI component (e.g., Treeview)
 
 Example:
-```
+```python
 # Insert new data
 for team in self.teams:
     tree.insert('', 'end', values=(team[0], team[1]))
