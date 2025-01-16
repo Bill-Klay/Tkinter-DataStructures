@@ -1,4 +1,5 @@
 # Tkinter-DataStructures
+
 E-SPORTS Results Tracker using custom built data structures in Python. Uses csv filing as the source of database and Tkinter as the GUI.
 
 ## Table of Contents
@@ -13,15 +14,20 @@ E-SPORTS Results Tracker using custom built data structures in Python. Uses csv 
 ## Setup
 
 1. Create a new Python virtual environment:
+
 ```bash
 python3 -m venv esr_tracker_env
 ```
+
 2. Activate the virtual environment:
+
 3. Install required packages:
+
 ```bash
 sudo apt install python3-tk
 pip install tk
 ```
+
 4. Clone the repository or create a new directory for your project.
 
 ## Usage
@@ -29,6 +35,7 @@ pip install tk
 1. Navigate to the project directory in your terminal/command prompt.
 2. Activate the virtual environment if not already active.
 3. Run the application:
+
 ```bash
 python esr_tracker.py
 ```
@@ -64,17 +71,20 @@ The main file `esr_tracker.py` contains the following classes and functions:
 ## Code Explanation
 
 ### Import Statements
+
 ```python
 import csv
 import tkinter as tk
 import tkinter.ttk as ttk
 from datetime import datetime
 ```
+
 These imports are necessary for the GUI, CSV operations, and date handling.
 
 ### ESRTracker Class
 
 #### Initialize data structures
+
 ```python
 self.teams = {}  # Dictionary of team names
 self.games = {}  # Dictionary of game names
@@ -82,11 +92,13 @@ self.matches = []  # List of match dictionaries
 ```
 
 #### Load initial data
+
 ```python
 self.load_data()
 ```
 
 #### Create main menu and tkinter frame
+
 ```python
 self.main_menu()
 
@@ -125,6 +137,7 @@ The read operation typically involves:
 2. Displaying the data in a GUI component (e.g., Treeview)
 
 Example:
+
 ```python
 # Insert new data
 for team in self.teams:
@@ -141,7 +154,8 @@ The update operation typically involves:
 4. Updating the GUI to reflect the changes
 
 Example:
-```python 
+
+```python
 def update_team_score(self, team_name, new_score): 
     for i, team in enumerate(self.teams): 
         if team[0] == team_name: 
@@ -159,7 +173,8 @@ The delete operation typically involves:
 3. Updating the GUI to reflect the deletion
 
 Example:
-```python 
+
+```python
 def remove_team(self, team_name): 
     self.teams = [team for team in self.teams if team[0] != team_name] 
     self.save_data() 
